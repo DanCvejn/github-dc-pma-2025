@@ -1,19 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="28dp"
+        android:orientation="vertical"
+        >
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/orderTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Jaké kolo chcete objednat?"
+            android:textAlignment="center"
+            android:textSize="24dp"
+            android:fontFamily="sans-serif-black"
+            android:layout_marginBottom="10dp"/>
+
+        <RadioGroup
+            android:id="@+id/bikes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginVertical="10dp"
+            >
+            <RadioButton
+                android:id="@+id/bike1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Oiz M10"
+                android:checked="true"
+                android:layout_weight="1"
+                />
+            <RadioButton
+                android:id="@+id/bike2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Oiz M20"
+                android:layout_weight="1"
+                />
+            <RadioButton
+                android:id="@+id/bike3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Oiz M30"
+                android:layout_weight="1"
+                />
+
+        </RadioGroup>
+
+        <CheckBox
+            android:id="@+id/fork"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="lepší vidlice"
+            />
+
+        <CheckBox
+            android:id="@+id/saddle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="lepší sedlo"
+            />
+
+        <CheckBox
+            android:id="@+id/handleBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="lepší řidítka"
+            />
+
+        <Button
+            android:id="@+id/btnOrder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Objednat kolo"
+            />
+
+        <TextView
+            android:id="@+id/order"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:text="Souhrn objednávky"
+            android:background="@android:color/system_inverse_primary_light"
+            android:padding="8dp"
+            android:layout_marginTop="10dp"
+            />
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/bike1"
+            android:scaleType="centerCrop"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>
