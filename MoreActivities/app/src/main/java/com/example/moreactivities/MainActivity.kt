@@ -1,0 +1,27 @@
+package com.example.moreactivities
+
+import android.content.Intent
+import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        val nicknameInput = findViewById<EditText>(R.id.nickname)
+        val btnSecondAct = findViewById<Button>(R.id.btnSecondAct)
+
+        btnSecondAct.setOnClickListener {
+            val nickname = nicknameInput.text.toString()
+            val intent = Intent(this, SecondActivity::class.java)
+            intent.putExtra("nickname", nickname)
+            startActivity(intent)
+        }
+    }
+}
